@@ -4,24 +4,32 @@ let userIds = [1230, 234, 1278, 984, 763, 900];
 
 // 1. Add all the values of numbers and userIds array into the new newly created array named `collection`
 let collection = [];
-for(let i = 0; i < numbers.length; i++){
-  collection[i] = numbers[i] + userIds[i];
+for(let num of numbers){
+  collection.push(num);
 }
+for(let id of userIds){
+  collection.push(id);
+}
+console.log(collection);
+
 
 // 2. Add all the even numbers from both arrays numbers and userIds into a newly created array named `evenCollection`
 let evenCollection = [];
-for(let i = 0; i < numbers.length; i++){
-  if(numbers[i] % 2 == 0 && userIds[i] % 2 == 0){
-    evenCollection[i] = numbers[i] + userIds[i];
-  }else{}
+for(let num of collection){
+  if(num % 2 == 0){
+    evenCollection.push(num);
+  }
 }
+console.log(evenCollection);
 // 3. Add all the odd numbers from both arrays numbers and userIds into a newly created array named `oddCollection`
 let oddCollection = [];
-for(let i = 0; i < numbers.length; i++){
-  if(numbers[i] % 2 != 0 && userIds[i] % 2 != 0){
-    oddCollection[i] = numbers[i] + userIds[i];
-  }else{}
+for(let num of collection){
+  if(num % 2 != 0){
+    oddCollection.push(num);
+  }
 }
+console.log(oddCollection);
+
 /*
   @param means parameter
 
@@ -67,7 +75,11 @@ console.log(times(5)); // ['test', 'test', 'test', 'test', 'test']
 */
 
 function revert(array) {
-  console.log(array.reverse());
+  let final = 0;
+  for(let i = array.length-1; i >= o; i--){
+    final.push(array[i]);
+  }
+  return final;
 }
 // Uncomment the code below and test the output
 console.log(revert([1, 2, 3, 4])); // [4, 3, 2, 1]
@@ -86,15 +98,24 @@ console.log(revert(['Ryan', 'John', 'Bran'])); //['Bran', 'John', 'Ryan']
     clear(['a', undefined, 'd', 0,  'c', 'b']); // ['b', 'c', 'd', 'a']
     clear(['Ryan', null, 0,  'John', 'Bran']); //['Bran', 'John', 'Ryan']
 */
+function isWanted(value){
+  return(
+    value == false ||
+    value == null ||
+    value == "" ||
+    value == undefined ||
+    value == 0
+  );
+}
 
 function clear(array) {
   let newray= [];
-  for(let i = 0; i < array.length; i++){
-    if(Boolean(array[i]) == true){
-      newray[i] = array[i];
-    }
-  }
-  console.log(newray);
+ for(let value of array){
+   if(!isWanted(value)){
+     newray.push(value);
+   }
+ }
+  return newray;
 }
 
 // Uncomment the code below and test the output
