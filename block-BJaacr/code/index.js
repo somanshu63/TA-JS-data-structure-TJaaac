@@ -25,15 +25,15 @@ console.log(got.houses);
 console.log(got.houses);
 // 3. Log the name of all houses in got one by one
 for(let i = 0; i <= got.houses.length; i++){
-  console.log(got.houses[i]);
+  console.log(got.houses[i].name);
 }
 // 4. Log the name of all the people in house Starks (index 0) one by one
 for(let i = 0; i <= got.houses[0].people.length; i++){
-console.log(got.houses[0].people[i]);
+console.log(got.houses[0].people[i].name);
 }
 // 5. Log the name of all the people in house Lannisters (index 1) one by one
 for(let i = 0; i <= got.houses[1].people.length; i++){
-  console.log(got.houses[1].people[i]);
+  console.log(got.houses[1].people[i].name);
   }
 // 6. Log the description of all the people in house Lannisters (index 1) one by one
 for(let i = 0; i <= got.houses[1].people.length; i++){
